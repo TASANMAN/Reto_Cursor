@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 50px;
+}
+
+.tooltip-container {
+  position: relative; /* Required for absolute positioning of tooltip */
+  display: inline-block;
+}
+
+.tooltip-word {
+  position: relative;
+  cursor: pointer; /* Indicates that it is interactive */
+}
+
+.tooltip {
+  position: absolute;
+  background-color: grey;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  white-space: nowrap;
+  visibility: hidden; /* Hide tooltip by default */
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s; /* Smooth fade-in effect */
+  z-index: 1000; /* Ensure tooltip is above other elements */
+  bottom: 125%; /* Position tooltip above the word */
+  left: 5px;
+  transform: translateX(-50%); /* Center the tooltip horizontally */
+}
+
+.tooltip-word:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
